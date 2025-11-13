@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Worker Drone</title>
+</head>
+<body>
+
+<form action="/overview/edit_WD" method="POST">
+      <input type="hidden" name="id" value="{{ customer[0] }}" />
+      <p>
+        Name:<br />
+        <input type="text" name="name" value="{{ customer[1] }}" />
+      </p>
+      <p>
+        Status:<br />
+        <input type="text" name="status" value="{{ customer[2] }}" />
+      </p>
+      <input type="submit" value="Update Worker Drone"/>
+    </form>
+    <p><a href="/overview">Back to overview</a></p>
+</body>
+</html>

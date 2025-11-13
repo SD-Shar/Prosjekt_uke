@@ -1,0 +1,42 @@
+<h1>Drone List</h1>
+
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+    {% for c in customers %}
+    <tr>
+        <td>{{c[0]}}</td>
+        <td>{{c[1]}}</td>
+        <td>{{c[2]}}</td>
+        <td>
+            <a href="/overview/delete_WD/{{c[0]}}"
+                onclick="return confirm('Are you sure you want to delete this drone?');">Delete</a>
+                <a href="/overview/edit_Wdrones/{{c[0]}}">View Profile</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+    <table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+    {% for c in customers %}
+    <tr>
+        <td>{{c[0]}}</td>
+        <td>{{c[1]}}</td>
+        <td>{{c[2]}}</td>
+        <td>
+            <a href="/overview/delete_DD/{{c[0]}}"
+                onclick="return confirm('Are you sure you want to delete this drone?');">Delete</a>
+                <a href="/overview/edit_Ddrones/{{c[0]}}">View Profile</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
