@@ -1,0 +1,8 @@
+# Ignorer .env slik at hemmeligheter ikke pushes til GitHub
+.env
+__pycache__/
+*.pyc
+.vscode/
+.venv/
+env/
+venv/

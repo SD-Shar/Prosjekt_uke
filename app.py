@@ -4,13 +4,13 @@ import mysql.connector
 app = Flask (__name__)
 
 
-mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-)
-mycursor = mydb.cursor
+def get_connection():
+    return mysql.connector.connect(
+        host="10.200.14.11",
+        user="absolute_solver",
+        password="silly",
+        database="drone_db"
+    )
 
 # mycursor.execute("CREATE TABLE workerD (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), status VARCHAR(255))")
 # mycursor.execute("CREATE TABLE disassemblyD (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), status VARCHAR(255))")
@@ -20,12 +20,7 @@ mycursor = mydb.cursor
 @app.route('/overview')
 def drones():
     
-    mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-)
+    mydb = get_connection()
     mycursor = mydb.cursor()
     mycursor.execute("SELECT * FROM workerD")
     workerD = mycursor.fetchall() #liste??
@@ -39,19 +34,15 @@ def drones():
 
 # WORKER DRONES
 
-@app.route("/overview/add_wd", methods=["GET", "POST"])
+@app.route("/overview/add_WD", methods=["GET", "POST"])
 def add_WD():
     
     if request.method == "POST":
         name = request.form["name"]
         status = request.form["status"]
         
-        mydb = mysql.connector.connect(
-        host="10.200.14.11",
-        user="absolute_solver",
-        password="silly",
-        database="drone_db"
-    )
+        mydb = get_connection()
+        
         mycursor = mydb.cursor()
         mycursor.execute(
             "INSERT INTO workerD (name, status) VALUES (%s, %s)", (name, status))
@@ -64,28 +55,34 @@ def add_WD():
 @app.route("/overview/edit_WD/<int:cid>")
 def edit_WD(cid):
     
-    mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-) 
+    mydb = get_connection()
     cursor = mydb.cursor()
-    cursor.execute("SELECT id, name, address FROM workerD WHERE id=%s",(cid,))
+    cursor.execute("SELECT id, name, status FROM workerD WHERE id=%s",(cid,))
     kunder = cursor.fetchone()
     mydb.close()
-    return render_template("edit_Wdrones.html", kunder = kunder)
+    return render_template("edit_WD.html", kunder = kunder)
+
+
+
+@app.route("/overview/update_WD", methods=["POST"])
+def update_WD():
+    cid = request.form["id"]
+    name = request.form["name"]
+    status = request.form["status"]
+    
+    mydb = get_connection()
+    cursor = mydb.cursor()
+    cursor.execute("UPDATE workerD SET name=%s, status=%s WHERE id=%s", (name, status, cid))
+    mydb.commit()
+    mydb.close()
+    return redirect("/overview")
+
 
 
 @app.route('/overview/delete_WD/<int:cid>')
 
 def delete_WD(cid):
-    mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-) 
+    mydb = get_connection()
     cursor = mydb.cursor()
     cursor.execute("DELETE FROM workerD WHERE id=%s", (cid,))
     mydb.commit()
@@ -95,22 +92,27 @@ def delete_WD(cid):
 
 # DISASSEMBLY DRONES
 
-@app.route("/overview/add_dd", methods=["GET", "POST"])
+import random
+# s er listen av number, x_pos står for x position som velger random plass i listen,
+# så settes x_pos inn i s
+def serialNumber():
+    s = list(''.join(random.choice('01') for _ in range(9)))
+    x_pos = random.randrange(9)
+    s[x_pos]= 'X'
+    return ''.join(s)
+
+@app.route("/overview/add_DD", methods=["GET", "POST"])
 def add_DD():
     
     if request.method == "POST":
         name = request.form["name"]
+        number = serialNumber()
         status = request.form["status"]
         
-        mydb = mysql.connector.connect(
-        host="10.200.14.11",
-        user="absolute_solver",
-        password="silly",
-        database="drone_db"
-    )
+        mydb = get_connection()
         mycursor = mydb.cursor()
         mycursor.execute(
-            "INSERT INTO disassemblyD (name, status) VALUES (%s, %s)", (name, status))
+            "INSERT INTO disassemblyD (name, serial, status) VALUES (%s, %s, %s)", (name, number, status))
         mydb.commit()
         return redirect("/overview")
     return render_template("add_DD.html")
@@ -120,29 +122,33 @@ def add_DD():
 @app.route("/overview/edit_DD/<int:cid>")
 def edit_DD(cid):
     
-    mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-) 
+    mydb = get_connection()
     cursor = mydb.cursor()
-    cursor.execute("SELECT id, name, address FROM disassemblyD WHERE id=%s",(cid,))
+    cursor.execute("SELECT id, name, serial, status FROM disassemblyD WHERE id=%s",(cid,))
     kunder = cursor.fetchone()
     mydb.close()
-    return render_template("edit_Ddrones.html", kunder = kunder)
+    return render_template("edit_DD.html", kunder = kunder)
     
     
+@app.route("/overview/update_DD", methods=["POST"])
+def update_DD():
+    cid = request.form["id"]
+    name = request.form["name"]
+    status = request.form["status"]
+    
+    mydb = get_connection()
+    cursor = mydb.cursor()
+    cursor.execute("UPDATE disassemblyD SET name=%s, status=%s WHERE id=%s", (name, status, cid))
+    mydb.commit()
+    mydb.close()
+    return redirect("/overview")
+
+
 
 @app.route('/overview/delete_DD/<int:cid>')
 def delete_DD(cid):
     
-    mydb = mysql.connector.connect(
-    host="10.200.14.11",
-    user="absolute_solver",
-    password="silly",
-    database="drone_db"
-) 
+    mydb = get_connection()
     cursor = mydb.cursor()
     cursor.execute("DELETE FROM disassemblyD WHERE id=%s", (cid,))
     mydb.commit()
