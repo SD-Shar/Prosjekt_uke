@@ -29,6 +29,16 @@ De får også en automatisk ID som ikke endrer seg.
 *Beskriv hvordan brukeren bruker løsningen -- fra startside til lagring
 av data.*
 
+## Installasjon
+1. Klon prosjektet:
+   git clone https://github.com/SD-Shar/Drone_database.git
+
+2. Installer krav:
+   ```bash
+   pip install flask
+
+   ```
+
 **Teknologier brukt:**
 
 -   Python / Flask\
@@ -76,6 +86,9 @@ Refleksjon: Hvordan hjalp Kanban arbeidet?
 ## 5. Databasebeskrivelse
 
 **Databasenavn:**
+```markdown
+drone_db
+```
 
 **Tabeller:**\
 \| Tabell \| Felt \| Datatype \| Beskrivelse \|
@@ -83,7 +96,32 @@ Refleksjon: Hvordan hjalp Kanban arbeidet?
 INT \| Primærnøkkel \| \| customers \| name \| VARCHAR(255) \| Navn \|
 \| customers \| address \| VARCHAR(255) \| Adresse \|
 
-**SQL-eksempel:**
++----+-------+------------+
+| id | name  | status     |
++----+-------+------------+
+|  1 | Doll  | infected   |
+|  3 | Nori  | patched    |
+|  4 | Uzi   | infected   |
+|  6 | Thad  | N/A        |
+|  7 | Alice | patched..? |
+|  8 | null  | null       |
++----+-------+------------+
+
++----+---------+--------+-----------+
+| id | name    | status | serial    |
++----+---------+--------+-----------+
+|  1 | N       | alive  | 0X0010010 |
+|  2 | V       | alive  | X00100000 |
+|  3 | J       | ???    | 00X111001 |
+|  4 | S       | dead   | 01X101000 |
+|  5 | R       | alive  | 000000000 |
+|  9 | serieal | test 2 | 111111X01 |
+| 10 | 1111    | 1212   | 011X01111 |
+| 12 | W       | dead   | 1111X1000 |
++----+---------+--------+-----------+
+
+!!!
+**SQL-eksempel:** 
 
 ``` sql
 
@@ -102,8 +140,8 @@ CREATE TABLE disassemblyD (
 ```
 
 ------------------------------------------------------------------------
-
-## 6. Programstruktur
+!!?
+## 6. Programstruktur 
 
     Prosjekt_uke/
      ├── app.py
@@ -133,7 +171,7 @@ Forklar ruter og funksjoner (kort).
 -   Feilhåndtering
 
 ------------------------------------------------------------------------
-
+!??
 ## 9. Feilsøking og testing
 
 -   Typiske feil\ (skrivefeil, brukte /main som var en innebygd kommando)
@@ -141,7 +179,7 @@ Forklar ruter og funksjoner (kort).
 -   Testmetoder (Test filer! - html css for raskere/live oppdatering)
 
 ------------------------------------------------------------------------
-
+!??
 ## 10. Konklusjon og refleksjon
 
 -   Hva lærte du?\ (Ikke gi den navn main, groove border...databaser ig)
@@ -150,7 +188,7 @@ Forklar ruter og funksjoner (kort).
 -   Hva var utfordrende? (Ikke vite hva feilene var, og lage kode for random serial number)
 
 ------------------------------------------------------------------------
-
+!!?
 ## 11. Kildeliste
 
 -   w3schools\

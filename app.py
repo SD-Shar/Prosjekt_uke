@@ -3,6 +3,9 @@ from flask import Flask, render_template, request, redirect
 import mysql.connector
 app = Flask (__name__)
 
+@app.route("/")
+def index():
+    return redirect("/overview")
 
 def get_connection():
     return mysql.connector.connect(

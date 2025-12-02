@@ -10,16 +10,16 @@
 
 <body>
 
-    <h2>Add Worker Drone</h2>
+    <h2 id="h2WD">Add Worker Drone</h2>
 
     <form action="/overview/add_WD" method="POST">
         <div class="ADD">
-            <input type="text" name="name" placeholder="Worker Name" />
-            <input type="text" name="status" placeholder="Status (infected or patched?)" />
+            <input type="text" name="name" placeholder="Worker Name" minlength="1" required style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" />
+            <input type="text" name="status" placeholder="Status (infected or patched?)" minlength="1" required style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" />
             <input class="sendBTN" type="submit" value="Send">
         </div>
     </form>
-
+    <p><a class="backlink" href="/overview">Back to overview</a></p>
 </body>
 
 </html>

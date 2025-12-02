@@ -44,7 +44,7 @@ h1 {
 }
 
 
-h2 {
+#h2DD {
     display: flex;
     color: black;
     background-color: yellow;
@@ -58,6 +58,22 @@ h2 {
     font-family: 'Gill Sans', Calibri, sans-serif;
 
 }
+
+#h2WD {
+    display: flex;
+    color: white;
+    background-color: gray;
+    width: 20%;
+    margin: 1%;
+    padding: 1.5%;
+
+    border: 2vh groove rgb(70, 70, 70);
+    border-radius: 0.5vh;
+
+    font-family: 'Gill Sans', Calibri, sans-serif;
+
+}
+
 
 table {
     background-color: black;
@@ -174,15 +190,15 @@ a.viewDD:hover {
 }
 
 
-a:link{
+a:link {
     color: green;
 }
 
-a:visited{
+a:visited {
     color: green;
 }
 
-a:hover{
+a:hover {
     font-size: small;
     color: grey;
     opacity: 50%;
@@ -196,10 +212,15 @@ a:hover{
 
 
 p {
-    color: rgb(1, 203, 1);
+    color: rgb(0, 150, 0);
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+#serialNumber {
+    color: rgb(0, 255, 0);
+    margin-top: -1%;
 }
 
 
@@ -218,21 +239,29 @@ a.backlink:hover {
 
 }
 
-input{
-    background-color: darkgreen;
-    color: white;
+input {
+    background-color: rgb(0, 44, 0);
+    color: grey;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: medium;
+
+    padding: 0.3%;
+    border: 0.5vh dashed rgb(0, 255, 0);
 }
 
 input.edit {
     margin: 5%;
-    background-color: rgb(0, 85, 0);
+    background-color: rgb(0, 30, 0);
     color: rgb(0, 255, 0);
     padding: 0.9vh;
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     font-weight: bold;
-    border: 0.5vh rgb(0, 255, 0) dashed;
+    border: 0.7vh green outset;
 }
+
 
 .subBTN {
     display: inline-block;
@@ -243,26 +272,31 @@ input.edit {
     transition: 0.5s;
 }
 
-.ADD{
+.ADD {
     margin: 1%;
 }
 
-.ADD>input{
+.ADD>input {
     background-color: rgb(0, 44, 0);
     color: white;
     font-size: medium;
     border: 0.5vh dashed rgb(0, 255, 0);
 }
 
-input.sendBTN{
+input.sendBTN {
     margin: 1%;
     font-size: large;
-    background-color: rgb(0, 60, 0);
-    border: 1vh groove rgb(0, 255, 0);
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: 1vh double rgb(0, 255, 0);
 }
 
-
-
+input.sendBTN:hover {
+    scale: 1.1;
+    transition: 0.5s;
+}
 
 
 

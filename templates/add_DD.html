@@ -10,15 +10,16 @@
 
 <body>
 
-    <h2>Add Disassembly Drone</h2>
+    <h2 id="h2DD">Add Disassembly Drone</h2>
 
     <form action="/overview/add_DD" method="POST">
         <div class="ADD">
-            <input type="text" name="name" placeholder="Drone Name" />
-            <input type="text" name="status" placeholder="Status (dead or alive?)" />
+            <input type="text" name="name" placeholder="Drone Name" minlength="1" required style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" />
+            <input type="text" name="status" placeholder="Status (dead or alive?)" minlength="1" required style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" />
             <input class="sendBTN" type="submit" value="Send">
         </div>
     </form>
+    <p><a class="backlink" href="/overview">Back to overview</a></p>
 
 </body>
 

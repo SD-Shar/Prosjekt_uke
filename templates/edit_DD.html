@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Disassembly Drone</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Disassembly Drone</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<form action="/overview/update_DD" method="POST">
-      <input type="hidden" name="id" value="{{ kunder[0] }}" />
-      <p>
-        Name:<br />
-        <input type="text" name="name" value="{{ kunder[1] }}" />
-      </p>
-      <p>
-        Serial number: <br>
-        {{ kunder [2] }}
-      </p>
-      <p>
-        Status:<br />
-        <input type="text" name="status" value="{{ kunder[3] }}" />
-      </p>
+  <form action="/overview/update_DD" method="POST">
+    <input type="hidden" name="id" value="{{ kunder[0] }}" />
+    <p>
+      Name:<br />
+      <input type="text" name="name" value="{{ kunder[1] }}" />
+    </p>
+    <p>
+      Serial designation number: <br>
+    <p id="serialNumber">{{ kunder [2] }}</p>
+    </p>
+    <p>
+      Status:<br />
+      <input type="text" name="status" value="{{ kunder[3] }}" />
+    </p>
     <div class="subBTN">
       <input class="edit" type="submit" value="Update Disassembly Drone" />
     </div>
   </form>
   <p><a class="backlink" href="/overview">Back to overview</a></p>
 </body>
+
 </html>
