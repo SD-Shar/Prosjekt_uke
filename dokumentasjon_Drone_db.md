@@ -11,10 +11,11 @@
 **Kort beskrivelse av prosjektet:**\
 
 ```markdown
-Databasen inneholder 2 forskjellige tabeller. En tabell for *worker drones* og en tabell for *disassembly drones*. Begge tabeller har ID, navn og status for hver drone. *Disassembly drones* har i tilegg også et tilfeldig serienummer hver.
-
-Det er mulig å slette droner, legge til droner og redigere de via "view profile" knappen.
-De får også en automatisk ID som ikke endrer seg. 
+ **Denne databasen er basert på en scene fra en indie animasjonsserie (uavhengig animasjonsserie) på youtube som heter MURDER DRONES. Det er et kort klipp som viser en database med droner, og jeg tenkte at å bruke det som utgangspunk for prosjektet mitt kan være gøy, og vise funksjonen med databaser. Jeg har tatt litt kreativ frihet ved å lage en enkel database ved det jeg har lært, og stylet det til å se litt ut som serien. Jeg har lagt til flere elementer og krav fra oppgaven vi har fått, til å vise kompetansen min med databaser i mariadb, bruk av python, flask og css.**
+ 
+ **Litt om MURDERDRONES:**
+ 
+ **Murder Drones er en serie på GLITCH Productions på YoutTube, laget av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3076 på en eksoplanet som heter "Copper 9", som følger hovedkarakteren Uzi, en *worker drone* som møter en *disassembly drone* som kalte seg "N". *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det alle mennenske liv. Uten mennesker skapte *worker drones* en sivilisasjon for seg selv, men plutselig ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav de navnet "Murder Drones".**
 
 ```
 ------------------------------------------------------------------------
@@ -23,9 +24,11 @@ De får også en automatisk ID som ikke endrer seg.
 
 ###Formål med applikasjonen:
 ```markdown
- **Denne databasen er basert på en scene fra en indie animasjonsserie (uavhengig animasjonsserie) på youtube som heter MURDER DRONES. Jeg har tatt litt kreativ frihet ved å ta utgangspunktet fra en database og lagt til flere elementer og krav fra oppgaven vi har fått, til å vise kompetansen min med databaser i mariadb, bruk av python, flask og css.**
- 
- **Det er en interaktiv database som gir brukeren mye frihet til å endre det de ønsker med dronene.**
+Databasen inneholder 2 tabeller. En tabell for *worker drones* og en tabell for *disassembly drones*. Begge tabeller har ID, navn og status for hver drone. *Disassembly drones* har i tilegg også et tilfeldig serienummer hver.
+
+Det er mulig å slette droner, legge til droner og redigere de via "view profile" knappen.
+De får også en automatisk ID som ikke endrer seg. 
+
 ```
 
 **Brukerflyt:**
@@ -131,30 +134,23 @@ drone_db
 ```markdown
 
 workerD tabell:
-+----+-------+------------+
-| id | name  | status     |
-+----+-------+------------+
-|  1 | Doll  | infected   |
-|  3 | Nori  | patched    |
-|  4 | Uzi   | infected   |
-|  6 | Thad  | N/A        |
-|  7 | Alice | patched..? |
-|  8 | null  | null       |
-+----+-------+------------+
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(255) | YES  |     | NULL    |                |
+| status | varchar(255) | YES  |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
 
 disassemblyD tabell:
-+----+---------+--------+-----------+
-| id | name    | status | serial    |
-+----+---------+--------+-----------+
-|  1 | N       | alive  | 0X0010010 |
-|  2 | V       | alive  | X00100000 |
-|  3 | J       | ???    | 00X111001 |
-|  4 | S       | dead   | 01X101000 |
-|  5 | R       | alive  | 000000000 |
-|  9 | serieal | test 2 | 111111X01 |
-| 10 | 1111    | 1212   | 011X01111 |
-| 12 | W       | dead   | 1111X1000 |
-+----+---------+--------+-----------+
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(255) | YES  |     | NULL    |                |
+| status | varchar(255) | YES  |     | NULL    |                |
+| serial | varchar(255) | YES  |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
 
 ```
 
@@ -252,6 +248,20 @@ så settes x_pos inn i s. Den bruker join(random.choice('01')) for _ in range (9
 
 ```
 
+```markdown
+```python
+@app.route("/overview/add_WD", methods=["GET", "POST"])
+def add_WD():
+    
+    if request.method == "POST":
+        name = request.form["name"]
+        status = request.form["status"]
+    (...)    
+
+```
+```markdown
+Denne koden er tatt ut fra en større del for å legge til nye *worker drones*. Forklaringen er om starten av koden. Den tar @app.route til html siden "add_WD" og bruker "GET" og "POST" til å hente informasjon og plassere den inn i tabellen (som klipp og lim). "if request.method == "POST":" sier at når man skal plassere dataen inn i tabellen fra det den har hentet, skal den sette navnet i feltet "name" og status i feltet "status". 
+```
 
 ------------------------------------------------------------------------
 
