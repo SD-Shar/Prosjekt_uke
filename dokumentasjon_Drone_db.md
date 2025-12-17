@@ -11,11 +11,11 @@
 **Kort beskrivelse av prosjektet:**\
 
 ```markdown
- **Denne databasen er basert på en scene fra en indie animasjonsserie (uavhengig animasjonsserie) på youtube som heter MURDER DRONES. Det er et kort klipp som viser en database med droner, og jeg tenkte at å bruke det som utgangspunk for prosjektet mitt kan være gøy, og vise funksjonen med databaser. Jeg har tatt litt kreativ frihet ved å lage en enkel database ved det jeg har lært, og stylet det til å se litt ut som serien. Jeg har lagt til flere elementer og krav fra oppgaven vi har fått, til å vise kompetansen min med databaser i mariadb, bruk av python, flask og css.**
+ **Denne databasen er basert på en scene fra en indie animasjonsserie (animasjonsserie som er produsert av en uavhengig gruppe med kunstnere og animatører) på youtube som heter MURDER DRONES. I serien er det en scene som viser en enkel database med droner, og jeg tenkte at å bruke det som utgangspunk for prosjektet mitt ville vært gøy og en god mulighet for læring. Jeg har tatt litt kreativ frihet ved å lage en lignende database med det jeg har lært, og stylet det til å se litt ut som serien. I tillegg har jeg lagt til flere elementer, tabeller og krav fra oppgaven vi har fått, til å vise kompetansen min med databaser i mariadb, bruk av python, flask og css.**
  
  **Litt om MURDERDRONES:**
- 
- **Murder Drones er en serie på GLITCH Productions på YoutTube, laget av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3076 på en eksoplanet som heter "Copper 9", som følger hovedkarakteren Uzi, en *worker drone* som møter en *disassembly drone* som kalte seg "N". *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det alle mennenske liv. Uten mennesker skapte *worker drones* en sivilisasjon for seg selv, men plutselig ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav de navnet "Murder Drones".**
+
+ **Murder Drones er en indie-animasjonsserie på YoutTube, produsert av GLITCH Productions og laget/skrevet av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3076 på en eksoplanet ved navn "Copper 9". Serien følger hovedkarakteren Uzi, en *worker drone* som møter en *disassembly drone* ved navn "N" (Bokstaven kommer fra serienummeret hans, som er på armen. Jeg har tatt inspirasjon fra dette og lagt det til i databasen som du vil se lenger ned). *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det allt av mennenske liv. Uten mennesker adapterte *worker dronene* til en egen sivilisasjon for seg selv. På grunn av dette ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav *disassembly drones* kallenavnet "Murder Drones". (herav tittelen)**
 
 ```
 ------------------------------------------------------------------------
@@ -24,10 +24,10 @@
 
 ###Formål med applikasjonen:
 ```markdown
-Databasen inneholder 2 tabeller. En tabell for *worker drones* og en tabell for *disassembly drones*. Begge tabeller har ID, navn og status for hver drone. *Disassembly drones* har i tilegg også et tilfeldig serienummer hver.
+Databasen inneholder 2 tabeller. En tabell for *worker drones* og en tabell for *disassembly drones*. Begge tabeller har ID, navn og status for hver drone. *Disassembly drones* har i tilegg også et tilfeldig serienummer hver. (Dette er en referanse til serien, der alle disassembly drones har et designert serienummer.)
 
 Det er mulig å slette droner, legge til droner og redigere de via "view profile" knappen.
-De får også en automatisk ID som ikke endrer seg. 
+Alle dronene får en ID automatisk som ikke endrer seg. 
 
 ```
 
