@@ -35,9 +35,9 @@ Alle dronene får en ID automatisk som ikke endrer seg.
 
 ```
 
-### Brukerflyt:
+**### Brukerflyt:**
 
-#### Startside:
+### Startside:
 
 (Se brukerveiledning for mer oversikt)
 
