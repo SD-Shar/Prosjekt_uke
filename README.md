@@ -165,12 +165,12 @@ Jeg tok screenshots for å sammenligne hva jeg ville ha som gjorde oppdateringer
 
 ## 5. Databasebeskrivelse
 
-**####Databasenavn:**
+#### Databasenavn:
 ```markdown
 drone_db
 ```
 
-**###Tabeller:**\
+### Tabeller:
 
 ```markdown
 
