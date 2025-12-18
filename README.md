@@ -8,16 +8,14 @@
 **11/2025:**
 
 
-**Kort beskrivelse av prosjektet:**\
+**###Kort beskrivelse av prosjektet:**\
 
-```markdown
  **Denne databasen er basert på en scene fra en indie animasjonsserie (indie er tatt fra det engelske ordet "independent" som i denne konteksten betyr at serien er produsert av en uavhengig gruppe med kunstnere og animatører) på youtube som heter MURDER DRONES. I serien er det en scene som viser en enkel database med droner, og jeg tenkte at å bruke det som utgangspunk for prosjektet mitt ville vært gøy og en god mulighet for læring. Jeg har tatt litt kreativ frihet ved å lage en lignende database med det jeg kunne fra før og har lært mens vi har jobbet med databaser, og stylet det til å se litt ut som serien. I tillegg har jeg lagt til flere elementer, tabeller og krav fra oppgaven vi har fått, til å vise kompetansen min med databaser i mariadb, bruk av python, flask og css.**
  
  **Litt om MURDERDRONES:**
 
  **Murder Drones er en indie-animasjonsserie på YoutTube, produsert av GLITCH Productions og laget/skrevet av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3071 på en eksoplanet ved navn "Copper 9". Serien følger hovedkarakteren Uzi, en *worker drone* som møter en *disassembly drone* ved navn "N" (Bokstaven kommer fra serienummeret hans, som er på armen. Jeg har tatt inspirasjon fra dette og lagt det til i databasen som du vil se lenger ned). *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det allt av mennenske liv. Uten mennesker adapterte *worker dronene* til en egen sivilisasjon for seg selv. På grunn av dette ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav *disassembly drones* kallenavnet "Murder Drones". (herav tittelen)**
 
-```
 ------------------------------------------------------------------------
 
 ## 2. Systembeskrivelse
@@ -37,35 +35,47 @@ Alle dronene får en ID automatisk som ikke endrer seg.
 
 ```markdown
 (Se brukerveiledning for mer oversikt)
+```
 
 **Worker Drones**
+```markdown
 Når programmet kjøres, åpnes det til startsiden "/overview" der det vises overskrift, to tabeller ved siden av hverandre og to "legg til" knapper under hver tabell. Den første kolonnen til venstre er til *wokerdrones* og viser en tabell med ID, navn, status og muligheten til å slette dronen, se på informasjonen eller redigere det via "view profile".
+```markdown
 
 **Disassembly Drones**
+```markdown
 Den neste kolonnen inneholder en tabell som viser *disassembly drones*. Tabellen vist er helt lik *workerdrones*, med ID, navn, og status og muligheten til å redigere og/eller slette.
 *Disassembly drones* har noe ekstra tilknyttet til dataen som kan bli funnet ved å klikke på en *disassembly drone* profil. Under navnet på dronen vil det stå et tilfeldig serienummer for hver *disassembly drone*.
+```
 
 **Delete (slett funksjon):**
+```markdown
 For alle droner er det en slett knapp ved siden av med navnet "Delete". Hvis du ønsker å slette en drone vil det komme opp en pop-up-vindu som spør om du er helt sikker på valget ditt. Om du velger å slette dronen vil den automatisk oppdatere tabellen og slette dronen fra databasen permanent.
+```
 
 **View profile (redigering av droner):**
+```markdown
 Alle droner i databasen har en "view profile" knapp, den vil lede brukeren til en redigerigs side (edit_WD/DD.html), der brukeren har muligheten til å endre navn og status på dronen. Etter man har endret navn og/eller status kan man trykke på "Update Dissassembly/Worker drone" og da vil den oppdatere automatisk og lede brukeren tilbake til startsiden med den nye endringen(e). Det er ikke mulig å endre serienummeret til en *disassembly drone*.
 ```
 
-```markdown
+
 
 ## Installasjon
+```markdown
 1. **Klon prosjektet:**
    git clone https://github.com/SD-Shar/Drone_database.git
+```
 
 2. **Installer krav:**
    ```bash
+   ```markdown
    pip install flask
    pip install mysql.connector
    .env - med eget passord
-
+```
 
 ###Teknologier brukt:
+```markdown
 
 -   Python / Flask\
 -   MariaDB\
@@ -80,9 +90,9 @@ Alle droner i databasen har en "view profile" knapp, den vil lede brukeren til e
 ### Servermiljø
 ```markdown
 *Ubuntu v.25, Mariadb, Raspberry pi*
-
+```
 ### Nettverksoppsett
-
+```markdown
 -   IP-adresser\
 ip-adresser for server (raspberry pi): 10.200.14.11 
 ip adresse for klient(windows): 10.2.0.31
@@ -98,16 +108,17 @@ Samba                      ALLOW       Anywhere
 80 (v6)                    ALLOW       Anywhere (v6)
 Samba (v6)                 ALLOW       Anywhere (v6)
 3306/tcp (v6)              ALLOW       Anywhere (v6)
-
+```
 
 Eksempel (henting av informasjon, som View Profile):
-
+```markdown
     Klient → Flask → MariaDB → Flask → Klient
-
+```
 
 
 ### Tjenestekonfigurasjon
 
+```markdown
 -   systemctl / Supervisor\
 -   Filrettigheter\
 -   Miljøvariabler
@@ -285,14 +296,19 @@ Dette utdraget av kode er tatt ut fra starten av koden som legger til nye *worke
 
 ## 9. Feilsøking og testing
 
+
+**###Feil jeg møtte**
 ```markdown
-**####Feil jeg møtte**
 -   Typiske feil jeg fikk var skrivefeil eller forvirrende funksjonsnavn. Jeg hadde først brukt "/main" for min "main page" som jeg fant ut var en innebygd kommando. Dette gjorde at ting var litt forvirrende på starten, men etter jeg fikk fikset det så gikk det greit. Noe annet jeg hadde gjort galt på begynnelsen var at jeg ikke hadde seperert funksjonsnavnene til *disassembly drones* og *worker drones* og hadde bare brukt "def drones():" for begge. Noen småting var også ikke linket sammen p.g.a. skrivefeil på funksjoner og noen ganger id navn på html elementer.
+```
 
-**####Løsning**
+**###Løsning**
+```markdown
 -   Hvordan jeg løste det: Dobbelsjekking av alt!
+```
 
-**####Testmetoder:**
+**###Testmetoder:**
+```markdown
 - Lagde test filer for å få en raskere/live oppdatering på css. Jeg lagde en seperat mappe og kopierte html sidene, i tilegg til css så jeg kunne gjøre små endringer i css uten å måtte kjøre koden via terminalen hver gang for å se endringene.
 
 ```
@@ -300,33 +316,38 @@ Dette utdraget av kode er tatt ut fra starten av koden som legger til nye *worke
 ------------------------------------------------------------------------
 
 ## 10. Konklusjon og refleksjon
-```markdown
 
 **####Hva lærte jeg?**
+```markdown
 - Jeg lærte at "main" var en innebygd back-end kommando som ikke er lurt å gi navn til index siden. 
 Jeg lærte litt mer om databaser; hvordan automatisk oppdatering fungerer og hvordan Mariadb håndterer nye kolonner og tabeller. Jeg lærte også hvordan man kan lage en tilfeldig nummergenerator i python, med en extra variabel innblandet.
+```
 
 **####Hva fungerte bra?**
+```markdown
 - Jeg vil si at prosjektet gikk ganske bra generelt, jeg ble ferdig relativt raskt og hadde god tid til å fikse småting som farger, style og utseende. Jeg ble fornøyd med hvordan resultatet så ut og hvordan html og css samarbeidet. 
+```
 
 **####Hva ville du gjort annerledes?**
+```markdown
 - Til neste gang ville jeg vært mer oppmerksom på navnene jeg gir funksjoner og filer, dobbeltsjekke alt, i tillegg til å ikke gi noen filnavn "main".
+```
 
 **####Hva var utfordrende?**
+```markdown
 - Noe som var litt utfordrene var når jeg ikke visste hva som skapte feilene, dette fant jeg ut av eventuelt men det å måtte lese gjennom hele koden flere ganger ble ganske slitsomt etterhvert. Det var også helt nytt for meg å lage en tilfeldig serienummer generator, og jeg fant ikke noe på nett som var det jeg lette etter så jeg måtte spørre chatgpt om det. Jeg ville helst ikke bruke KI, men koden jeg fikk var enkel nok til å forstå og virket brukbar, så nå har jeg noe jeg kan bruke til en annen gang hvis jeg trenger noe lignende.
 ```
 ------------------------------------------------------------------------
 
-```markdown
 ## 11. Kildeliste
 
+```markdown
 -   w3schools\
 -   Tidligere oppgaver (Hovedsakelig til koden og mysql CREATE kommandoer)
-
 ```
 
-```markdown
 ### Laget av
+```markdown
 - Rebecca
 
 ```
