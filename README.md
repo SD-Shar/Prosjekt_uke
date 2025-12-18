@@ -35,7 +35,7 @@ Alle dronene får en ID automatisk som ikke endrer seg.
 
 ```
 
-**Brukerflyt:**
+**###Brukerflyt:**
 
 ### Startside:
 
@@ -81,8 +81,9 @@ Det er ikke mulig å endre serienummeret til en *disassembly drone*.
 
 
 ## Installasjon
-```markdown
+
 1. **Klon prosjektet:**
+```markdown
    git clone https://github.com/SD-Shar/Drone_database.git
 ```
 
