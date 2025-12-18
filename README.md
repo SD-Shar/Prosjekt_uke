@@ -218,9 +218,16 @@ CREATE TABLE disassemblyD (
 ## 6. Programstruktur 
 
     Prosjekt_uke/
-     ├── app.py
+
      ├── templates/
+     ├──── add_DD.html
+     ├──── add_WD.html
+     ├──── edit_DD.html
+     ├──── edit_WD.html
+     ├──── overview.html
      ├── static/
+     ├──── style.css
+     ├── app.py
      ├── brukerveiledning
      └── .env
 
