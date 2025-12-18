@@ -16,9 +16,9 @@ Jeg har tatt litt kreativ frihet ved å lage en lignende database med det jeg ku
  
  **Litt om MURDERDRONES:**
 
-Murder Drones er en indie-animasjonsserie på YoutTube, produsert av GLITCH Productions og laget/skrevet av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3071 på en eksoplanet ved navn "Copper 9". Serien følger hovedkarakteren Uzi, en *worker drone* som møter en *disassembly drone* ved navn "N" (Bokstaven kommer fra serienummeret hans, som er på armen.
+Murder Drones er en indie-animasjonsserie på YoutTube, produsert av GLITCH Productions og laget/skrevet av Liam Vickers. Det er en horror-komedie på 8 episoder og tar plass i året 3071 på en eksoplanet ved navn "Copper 9". Serien følger hovedkarakteren Uzi, en *worker drone* (robot) som møter en *disassembly drone* ved navn "N" (Bokstaven kommer fra serienummeret hans, som er på armen.)
 
-Jeg har tatt inspirasjon fra dette og lagt det til i databasen som du vil se lenger ned). *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det allt av mennenske liv. Uten mennesker adapterte *worker dronene* til en egen sivilisasjon for seg selv. På grunn av dette ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav *disassembly drones* kallenavnet "Murder Drones". (herav tittelen)
+Jeg har tatt inspirasjon fra dette og lagt det til i databasen (som du vil se lenger ned). *Worker Drones* var lagd for å utvinne ressurser fra eksoplaneter, men etter en kjernekollaps på planeten, utryddet det allt av mennenske liv. Uten mennesker adapterte *worker dronene* til en egen sivilisasjon for seg selv. På grunn av dette ble det sent "disassembly drones", som skulle fjerne *worker drones* fra planeten, siden menneskene ville ikke ha sansende og frittgående KI. *Worker dronene* gav *disassembly drones* kallenavnet "Murder Drones". (herav tittelen)
 
 ------------------------------------------------------------------------
 
